@@ -1,8 +1,10 @@
 package com.minseokism.webservice.web;
 
-import com.minseokism.webservice.dto.posts.PostsSaveRequestDto;
-import com.minseokism.webservice.service.PostService;
+import com.minseokism.webservice.dto.PostsSaveRequestDto;
+import com.minseokism.webservice.service.PostsService;
+
 import lombok.AllArgsConstructor;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class WebRestController {
 
-    private PostService postService;
+    private PostsService postsService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -21,7 +23,7 @@ public class WebRestController {
 
     @PostMapping("/posts")
     public Long savePosts(@RequestBody PostsSaveRequestDto dto) {
-        return postService.save(dto);
+        return postsService.save(dto);
     }
 
 }

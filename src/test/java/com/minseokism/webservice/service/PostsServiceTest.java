@@ -2,7 +2,7 @@ package com.minseokism.webservice.service;
 
 import com.minseokism.webservice.domain.posts.Posts;
 import com.minseokism.webservice.domain.posts.PostsRepository;
-import com.minseokism.webservice.dto.posts.PostsSaveRequestDto;
+import com.minseokism.webservice.dto.PostsSaveRequestDto;
 
 import org.junit.After;
 import org.junit.Test;
@@ -17,10 +17,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PostServiceTest {
+public class PostsServiceTest {
 
     @Autowired
-    private PostService postService;
+    private PostsService postsService;
 
     @Autowired
     private PostsRepository postsRepository;
@@ -40,7 +40,7 @@ public class PostServiceTest {
                 .build();
 
         //when
-        postService.save(dto);
+        postsService.save(dto);
 
         //then
         Posts posts = postsRepository.findAll().get(0);

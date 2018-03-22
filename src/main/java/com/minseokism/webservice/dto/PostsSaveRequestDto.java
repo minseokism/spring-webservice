@@ -1,4 +1,4 @@
-package com.minseokism.webservice.dto.posts;
+package com.minseokism.webservice.dto;
 
 import com.minseokism.webservice.domain.posts.Posts;
 import lombok.Builder;
